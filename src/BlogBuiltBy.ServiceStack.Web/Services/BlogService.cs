@@ -20,12 +20,12 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
 
         public object Post(Blog blog)
         {
-            return Repository.AddOrUpdate(blog);
+            return Repository.Create(blog);
         }
 
         public object Put(Blog blog)
         {
-            return Post(blog);
+            return Repository.Update(blog);
         }
 
         public void Delete(FindBlogsByIds request)

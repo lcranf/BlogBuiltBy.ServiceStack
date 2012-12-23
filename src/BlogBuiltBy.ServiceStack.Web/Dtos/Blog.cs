@@ -1,4 +1,5 @@
-﻿using ServiceStack.ServiceHost;
+﻿using ServiceStack.DataAnnotations;
+using ServiceStack.ServiceHost;
 
 namespace BlogBuiltBy.ServiceStack.Web.Dtos
 {
@@ -7,7 +8,10 @@ namespace BlogBuiltBy.ServiceStack.Web.Dtos
     [Route("/blog", "DELETE")]
     public class Blog
     {
+        [AutoIncrement]
         public long Id { get; set; }
+
+
         public string Name { get; set; }
     }
 }

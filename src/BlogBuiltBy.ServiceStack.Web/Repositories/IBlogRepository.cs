@@ -7,7 +7,8 @@ namespace BlogBuiltBy.ServiceStack.Web.Repositories
     {
         IList<Blog> FindByIds(long[] ids);
         IList<Blog> GetAll();
-        Blog AddOrUpdate(Blog blog);
+        Blog Update(Blog blog);
         bool Delete(long[] ids);
+        Blog Create(Blog blog);
     }
 }
