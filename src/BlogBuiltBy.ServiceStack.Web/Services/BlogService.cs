@@ -1,41 +1,41 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using BlogBuiltBy.ServiceStack.Web.Dtos;
 using BlogBuiltBy.ServiceStack.Web.Extensions;
-using BlogBuiltBy.ServiceStack.Web.Repositories;
+using ServiceStack.OrmLite;
 using ServiceStack.ServiceInterface;
 
 namespace BlogBuiltBy.ServiceStack.Web.Services
 {
     public class BlogService : Service
     {
-        public IBlogRepository Repository { get; set; }
-
-        public List<Blog> Any(FindBlogsByIds query)
+        public List<Blog> Get(Blogs blogs)
         {
-            return query.Ids.IsNullOrEmpty()
-                       ? Repository.GetAll().ToList()
-                       : Repository.FindByIds(query.Ids).ToList();
+            return blogs.Ids.IsNullOrEmpty()
+                       ? Db.Select<Blog>()
+                       : Db.GetByIds<Blog>(blogs.Ids);
         }
 
         public object Post(Blog blog)
         {
-            return Repository.Create(blog);
+            Db.Insert(blog);
+            blog.Id = Db.GetLastInsertId();
+            return blog;
         }
 
         public object Put(Blog blog)
         {
-            return Repository.Update(blog);
+            Db.Update(blog, b => b.Id == blog.Id);
+            return blog;
         }
 
-        public void Delete(FindBlogsByIds request)
+        public void Delete(Blogs blogs)
         {
-            Repository.Delete(request.Ids);
+            Db.DeleteByIds<Blog>(blogs.Ids);
         }
 
         public void Delete(Blog blog)
         {
-            Repository.Delete(new[] { blog.Id });
+            Db.DeleteById<Blog>(blog.Id);
         }
     }
 }

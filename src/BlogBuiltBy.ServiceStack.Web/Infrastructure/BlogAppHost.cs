@@ -1,9 +1,9 @@
 ﻿using System.Web;
 using BlogBuiltBy.ServiceStack.Web.Dtos;
-using BlogBuiltBy.ServiceStack.Web.Repositories;
 using BlogBuiltBy.ServiceStack.Web.Services;
 using Funq;
 using ServiceStack.OrmLite;
+using ServiceStack.Razor;
 using ServiceStack.WebHost.Endpoints;
 
 namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
@@ -15,8 +15,13 @@ namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
 
         public override void Configure(Container container)
         {
+            InstallPlugins(container);
             SetupDatabase(container);
-            RegisterRepositories(container);
+        }
+
+        private void InstallPlugins(Container container)
+        {
+            Plugins.Add(new RazorFormat());
         }
 
         private void SetupDatabase(Container container)
@@ -26,14 +31,6 @@ namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
             CreateDatabase(dbFactory);
 
             container.Register<IDbConnectionFactory>(dbFactory);
-        }
-
-        private static void RegisterRepositories(Container container)
-        {
-            container.RegisterAutoWiredAs<BlogRepository, IBlogRepository>()
-                     .ReusedWithin(ReuseScope.Request);
-            container.RegisterAutoWiredAs<PostRepository, IPostRepository>()
-                     .ReusedWithin(ReuseScope.Request);
         }
 
         private void CreateDatabase(OrmLiteConnectionFactory dbFactory)

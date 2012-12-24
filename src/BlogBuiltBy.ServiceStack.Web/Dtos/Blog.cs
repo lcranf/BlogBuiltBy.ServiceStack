@@ -5,7 +5,7 @@ namespace BlogBuiltBy.ServiceStack.Web.Dtos
 {
     [Route("/blog", "POST")]
     [Route("/blog", "PUT")]
-    [Route("/blog", "DELETE")]
+    [Route("/blog/{Id}", "DELETE")]
     public class Blog
     {
         [AutoIncrement]

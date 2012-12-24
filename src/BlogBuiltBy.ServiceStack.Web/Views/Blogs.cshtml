@@ -1,0 +1,22 @@
+﻿@using BlogBuiltBy.ServiceStack.Web.Dtos
+
+@inherits ViewPage<List<Blog>>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var blog in Model)
+        {
+            <tr>
+                <td>@blog.Id</td>
+                <td>@blog.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+              

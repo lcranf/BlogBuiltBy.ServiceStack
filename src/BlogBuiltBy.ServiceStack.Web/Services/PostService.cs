@@ -1,37 +1,41 @@
 ﻿using System.Collections.Generic;
 using BlogBuiltBy.ServiceStack.Web.Dtos;
-using BlogBuiltBy.ServiceStack.Web.Repositories;
+using ServiceStack.OrmLite;
 using ServiceStack.ServiceInterface;
 
 namespace BlogBuiltBy.ServiceStack.Web.Services
 {
     public class PostService : Service
     {
-        public IPostRepository PostRepository { get; set; }
-
         public List<Post> Any(Posts posts)
         {
-            return PostRepository.FindPostsByBlogId(posts.BlogId);
+            return Db.Select<Post>(p => p.BlogId == posts.BlogId);
         }
 
         public object Get(Post post)
         {
-            return PostRepository.FindById(post.Id);
+            return Db.GetById<Post>(post.Id);
         }
 
         public object Post(Post post)
         {
-            return PostRepository.Create(post);
+            Db.Insert(post);
+            post.Id = Db.GetLastInsertId();
+
+            return post;
         }
 
         public object Put(Post post)
         {
-            return PostRepository.Update(post);
+            Db.UpdateOnly(post,
+                          ev => ev.Update(new[] {"Title", "Message"}).Where(p => p.Id == post.Id));
+
+            return post;
         }
 
         public void Delete(Post post)
         {
-            PostRepository.Delete(post.Id);
+            Db.DeleteById<Post>(post.Id);
         }
-}
+    }
 }

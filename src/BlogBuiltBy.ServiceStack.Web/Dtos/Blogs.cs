@@ -6,11 +6,11 @@ namespace BlogBuiltBy.ServiceStack.Web.Dtos
     [Route("/blogs", "GET")]
     [Route("/blogs", "POST")]
     [Route("/blogs", "DELETE")]
-    public class FindBlogsByIds : IReturn<List<Blog>> 
+    public class Blogs : IReturn<List<Blog>> 
     {
         private long[] _ids = new long[0];
 
-        public FindBlogsByIds(params long[] ids)
+        public Blogs(params long[] ids)
         {
             Ids = ids;
         }
