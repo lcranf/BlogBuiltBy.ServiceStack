@@ -3,12 +3,16 @@
 <head>
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Assets/css/bootstrap.min.css")" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
 </head>
     <body>
         
+        @Html.Partial("_TopMenu")
         <div class="container">
-            @Html.Partial("_TopMenu")
-
             @RenderBody()
         </div>
     

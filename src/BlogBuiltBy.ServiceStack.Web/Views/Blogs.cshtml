@@ -1,10 +1,11 @@
-﻿@using BlogBuiltBy.ServiceStack.Web.Dtos
-
-@inherits ViewPage<List<Blog>>
+﻿@inherits ViewPage<List<Blog>>
 
 @{
     ViewBag.Title = "Blogs";
 }
+
+<button class="btn btn-inverse">Create New Blog</button>
+
 
 <table class="table table-hover table-bordered table-striped">
     <caption>Blogs</caption>
@@ -16,11 +17,15 @@
         </tr>
     </thead>
     <tbody>
+        @if (!Model.Any())
+        {
+            <tr><td colspan="3">No Blogs Available</td></tr>
+        }
         @foreach (var blog in Model)
         {
-            <tr>
-                <td>@blog.Id</td>
-                <td>@blog.Name</td>
+            <tr id="blog-row-@blog.Id">
+                <td id="blog-row-@blog.Id-idcolumn">@blog.Id</td>
+                <td id="blog-row-@blog.Id-namecolumn">@blog.Name</td>
                 <td>
                     <div class="btn-group">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -28,9 +33,9 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Edit</a></li>
-                            <li><a href="#">Delete</a></li>
-                            <li><a href="#">View Posts</a></li>
+                            <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+                            <li><a href="#"><i class="icon-trash"></i>  Delete</a></li>
+                            <li><a href="@Url.Content(string.Format("/posts/{0}", blog.Id))"><i class="icon-eye-open"></i> View Posts</a></li>
                         </ul>
                     </div>
                 </td>
@@ -38,4 +43,3 @@
         }
     </tbody>
 </table>
-              

@@ -2,6 +2,8 @@
 using BlogBuiltBy.ServiceStack.Web.Dtos;
 using BlogBuiltBy.ServiceStack.Web.Services;
 using Funq;
+using ServiceStack.Logging;
+using ServiceStack.Logging.Support.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 using ServiceStack.WebHost.Endpoints;
@@ -15,6 +17,8 @@ namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
 
         public override void Configure(Container container)
         {
+            //TODO: configure logging
+            //LogManager.LogFactory = new DebugLogFactory();
             InstallPlugins(container);
             SetupDatabase(container);
         }

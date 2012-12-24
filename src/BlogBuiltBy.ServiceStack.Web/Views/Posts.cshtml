@@ -1,0 +1,32 @@
+﻿@inherits ViewPage<List<Post>>
+
+@{
+    ViewBag.Title = "Posts";
+}
+
+<table class="table table-hover table-bordered table-striped">
+    <caption>Posts</caption>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Message</th>
+            <th>Created On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr><td colspan="4">No Posts Available</td></tr>
+        }
+        @foreach (var post in Model)
+        {
+            <tr id="blog-row-@post.Id">
+                <td>@post.Id</td>
+                <td>@post.Title</td>
+                <td>@post.Message</td>
+                <td>@post.CreatedOn</td>
+            </tr>
+        }
+    </tbody>
+</table>

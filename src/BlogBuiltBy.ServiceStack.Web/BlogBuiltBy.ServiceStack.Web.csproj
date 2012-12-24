@@ -120,6 +120,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap-responsive.css" />
+    <Content Include="Assets\css\bootstrap-responsive.min.css" />
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Assets\img\glyphicons-halflings.png" />
+    <Content Include="Assets\Scripts\bootstrap.js" />
+    <Content Include="Assets\Scripts\bootstrap.min.js" />
     <Content Include="Global.asax" />
     <Content Include="README.txt" />
     <Content Include="Web.config" />
@@ -155,6 +163,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Blogs.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\Posts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -164,9 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Images\" />
-    <Folder Include="Assets\Scripts\" />
-    <Folder Include="Assets\Styles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

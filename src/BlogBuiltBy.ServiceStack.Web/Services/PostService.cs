@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using BlogBuiltBy.ServiceStack.Web.Dtos;
+using ServiceStack.Common.Web;
 using ServiceStack.OrmLite;
 using ServiceStack.ServiceInterface;
 
@@ -14,11 +17,20 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
 
         public object Get(Post post)
         {
-            return Db.GetById<Post>(post.Id);
+            var entity = Db.SingleOrDefault<Post>("Id = {0}", post.Id);
+
+            if (entity == null)
+            {
+                throw new HttpError(HttpStatusCode.NotFound, "NotFound");
+            }
+
+            return entity;
         }
 
         public object Post(Post post)
         {
+            post.CreatedOn = DateTime.Now;
+
             Db.Insert(post);
             post.Id = Db.GetLastInsertId();
 
