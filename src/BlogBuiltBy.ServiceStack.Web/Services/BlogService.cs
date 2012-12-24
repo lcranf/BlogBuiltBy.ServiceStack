@@ -28,14 +28,28 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
             return blog;
         }
 
-        public void Delete(Blogs blogs)
+        public DeleteBlogsResponse Delete(Blogs blogs)
         {
             Db.DeleteByIds<Blog>(blogs.Ids);
+
+            return new DeleteBlogsResponse
+                {
+                    IsSuccessful = true,
+                    RowsAffected = blogs.Ids.Length,
+                    Message = string.Format("{0} Blogs were successfully deleted.", blogs.Ids.Length)
+                };
         }
 
-        public void Delete(Blog blog)
+        public DeleteBlogResponse Delete(Blog blog)
         {
             Db.DeleteById<Blog>(blog.Id);
+
+            return new DeleteBlogResponse
+                {
+                    IsSuccessful = true,
+                    RowsAffected = 1,
+                    Message = string.Format("Blog with id of '{0}' was successfully deleted", blog.Id)
+                };
         }
     }
 }

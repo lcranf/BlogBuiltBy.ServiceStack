@@ -33,9 +33,16 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
             return post;
         }
 
-        public void Delete(Post post)
+        public DeletePostResponse Delete(Post post)
         {
-            Db.DeleteById<Post>(post.Id);
+            Db.DeleteByIds<Post>(new [] { post.Id });
+
+            return new DeletePostResponse
+                {
+                    IsSuccessful = true,
+                    Message = string.Format("Post with Id '{0}' was sucessfully deleted.", post.Id),
+                    RowsAffected = 1
+                };
         }
     }
 }

@@ -136,8 +136,12 @@
     </Compile>
     <Compile Include="Dtos\Blog.cs" />
     <Compile Include="Dtos\Blogs.cs" />
+    <Compile Include="Dtos\DeleteBlogResponse.cs" />
+    <Compile Include="Dtos\DeleteBlogsResponse.cs" />
+    <Compile Include="Dtos\DeletePostResponse.cs" />
     <Compile Include="Dtos\Post.cs" />
     <Compile Include="Dtos\Posts.cs" />
+    <Compile Include="Dtos\ResponseBase.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
