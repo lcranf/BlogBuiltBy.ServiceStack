@@ -1,58 +1,59 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using BlogBuiltBy.ServiceStack.Web.Dtos;
 using ServiceStack.OrmLite;
 
 namespace BlogBuiltBy.ServiceStack.Web.Repositories
 {
-    public class BlogRepository : IBlogRepository
+    public class PostRepository : IPostRepository
     {
         public IDbConnectionFactory DbConnectionFactory { get; set; }
 
-        public IList<Blog> FindByIds(long[] ids)
+        public List<Post> FindPostsByBlogId(long blogId)
         {
             using (var db = DbConnectionFactory.OpenDbConnection())
             {
-                return db.GetByIds<Blog>(ids);
+                return db.Select<Post>(p => p.BlogId == blogId);
             }
         }
 
-        public IList<Blog> GetAll()
+        public Post FindById(long id)
         {
             using (var db = DbConnectionFactory.OpenDbConnection())
             {
-                return db.Each<Blog>().ToList();
+                return db.GetById<Post>(id);
             }
         }
 
-        public Blog Create(Blog blog)
+        public Post Create(Post post)
         {
             using (var db = DbConnectionFactory.OpenDbConnection())
             {
-                db.Insert(blog);
-                blog.Id = db.GetLastInsertId();
+                post.CreatedOn = DateTime.Now;
+                db.Insert(post);
+                post.Id = db.GetLastInsertId();
             }
 
-            return blog;
-        }
-        public Blog Update(Blog blog)
-        {
-            using (var db = DbConnectionFactory.OpenDbConnection())
-            {
-                db.Update(blog, b => b.Id == blog.Id);
-            }
-
-            return blog;
+            return post;
         }
 
-        public bool Delete(long[] ids)
+        public Post Update(Post post)
         {
             using (var db = DbConnectionFactory.OpenDbConnection())
             {
-                db.DeleteByIds<Blog>(ids);
+                db.UpdateOnly(post,
+                    ev => ev.Update(new[] {"Title", "Message"}).Where(p => p.Id == post.Id));
             }
 
-            return true;
+            return post;
+        }
+
+        public void Delete(long id)
+        {
+            using (var db = DbConnectionFactory.OpenDbConnection())
+            {
+                db.DeleteById<Post>(id);
+            }
         }
     }
 }

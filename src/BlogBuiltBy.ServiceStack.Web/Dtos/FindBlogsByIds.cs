@@ -10,15 +10,15 @@ namespace BlogBuiltBy.ServiceStack.Web.Dtos
     {
         private long[] _ids = new long[0];
 
+        public FindBlogsByIds(params long[] ids)
+        {
+            Ids = ids;
+        }
+
         public long[] Ids
         {
             get { return _ids; }
             set { _ids = value; }
-        }
-
-        public FindBlogsByIds(params long[] ids)
-        {
-            Ids = ids;
         }
     }
 }

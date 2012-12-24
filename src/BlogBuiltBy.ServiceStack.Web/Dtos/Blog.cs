@@ -11,7 +11,6 @@ namespace BlogBuiltBy.ServiceStack.Web.Dtos
         [AutoIncrement]
         public long Id { get; set; }
 
-
         public string Name { get; set; }
     }
 }
