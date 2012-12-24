@@ -6,11 +6,13 @@
     ViewBag.Title = "Blogs";
 }
 
-<table>
+<table class="table table-hover table-bordered table-striped">
+    <caption>Blogs</caption>
     <thead>
         <tr>
-            <td>Id</td>
-            <td>Name</td>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +21,19 @@
             <tr>
                 <td>@blog.Id</td>
                 <td>@blog.Name</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            Action
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Edit</a></li>
+                            <li><a href="#">Delete</a></li>
+                            <li><a href="#">View Posts</a></li>
+                        </ul>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>
