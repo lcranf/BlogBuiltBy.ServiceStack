@@ -15,6 +15,11 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
                        : Db.GetByIds<Blog>(blogs.Ids);
         }
 
+        public object Get(Blog blog)
+        {
+            return Db.GetByIdOrDefault<Blog>(blog.Id);
+        }
+
         public object Post(Blog blog)
         {
             Db.Insert(blog);
@@ -28,20 +33,17 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
             return blog;
         }
 
-        public DeleteBlogsResponse Delete(Blogs blogs)
+        public DeleteBlogResponse Any(DeleteBlog blog)
         {
-            Db.DeleteByIds<Blog>(blogs.Ids);
+            if (Db.Scalar<int>("Select count(*) From Blog Where Id = {0}", blog.Id) == 0)
+            {
+                return new DeleteBlogResponse
+                    {
+                        IsSuccessful = false,
+                        Message = string.Format("No blog exists with an Id of {0}", blog.Id)
+                    };
+            }
 
-            return new DeleteBlogsResponse
-                {
-                    IsSuccessful = true,
-                    RowsAffected = blogs.Ids.Length,
-                    Message = string.Format("{0} Blogs were successfully deleted.", blogs.Ids.Length)
-                };
-        }
-
-        public DeleteBlogResponse Delete(Blog blog)
-        {
             Db.DeleteById<Blog>(blog.Id);
 
             return new DeleteBlogResponse

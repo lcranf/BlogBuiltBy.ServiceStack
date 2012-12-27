@@ -144,11 +144,12 @@
     </Compile>
     <Compile Include="Dtos\Blog.cs" />
     <Compile Include="Dtos\Blogs.cs" />
+    <Compile Include="Dtos\DeleteBlog.cs" />
     <Compile Include="Dtos\DeleteBlogResponse.cs" />
-    <Compile Include="Dtos\DeleteBlogsResponse.cs" />
     <Compile Include="Dtos\DeletePostResponse.cs" />
     <Compile Include="Dtos\Post.cs" />
     <Compile Include="Dtos\Posts.cs" />
+    <Compile Include="Dtos\PostsResponse.cs" />
     <Compile Include="Dtos\ResponseBase.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Global.asax.cs">
@@ -165,6 +166,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Posts.cshtml" />
+    <Content Include="Assets\Scripts\jquery.alert.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

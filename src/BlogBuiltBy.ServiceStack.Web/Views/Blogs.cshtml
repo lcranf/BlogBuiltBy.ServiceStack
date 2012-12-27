@@ -4,11 +4,22 @@
     ViewBag.Title = "Blogs";
 }
 
-<button class="btn btn-inverse">Create New Blog</button>
+<div class="page-header">
+    <h3>Blogs</h3>
+</div>
 
+<p>
+    <button class="btn btn-inverse">Create New Blog</button>    
+</p>
 
-<table class="table table-hover table-bordered table-striped">
-    <caption>Blogs</caption>
+<div id="alert-messages"></div>
+
+<div class="alert alert-block alert-error hide fade in">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <p>This is a error message from the server</p>
+</div>
+
+<table id="blogs-table" class="table table-hover table-bordered table-striped">
     <thead>
         <tr>
             <th>Id</th>
@@ -34,7 +45,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
-                            <li><a href="#"><i class="icon-trash"></i>  Delete</a></li>
+                            <li><a class="delete-confirmation" data-toggle="modal" data-delete-url="/blog/delete/@blog.Id" data-parent-row="blog-row-@blog.Id"><i class="icon-trash"></i>  Delete</a></li>
                             <li><a href="@Url.Content(string.Format("/posts/{0}", blog.Id))"><i class="icon-eye-open"></i> View Posts</a></li>
                         </ul>
                     </div>
@@ -43,3 +54,71 @@
         }
     </tbody>
 </table>
+
+<div id="blog-delete-modal" class="modal hide fade" tabindex="-1" role="dialog">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3>Delete Blog?</h3>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to delete this blog?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+        <button class="btn btn-danger delete-confirmed">Delete</button>
+    </div>
+</div>
+
+@section JavaScript {
+    
+    <script src="@Url.Content("~/Assets/Scripts/jquery.alert.js")"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            $.ajaxSetup({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
+            });
+
+            $("#blogs-table").on("click", "a.delete-confirmation", function(e) {
+                var url = $(this).data("delete-url");
+                var parentRow = $(this).data("parent-row");
+                
+                $("#blog-delete-modal")
+                      .data("delete-url", url)
+                      .data("parent-row", parentRow)
+                      .modal("show");
+            });
+
+            $("#blog-delete-modal").on("click", "button.delete-confirmed", function(e) {
+                var deleteUrl = $("#blog-delete-modal").data("delete-url");
+                var parentRow = $("#blog-delete-modal").data("parent-row");
+
+                $.ajax(deleteUrl).success(function(data) {
+                    $("#alert-messages").alertMessage({
+                        alertType: data.IsSuccessful ? 'alert-success' : 'alert-error',
+                        autoClose: true,
+                        fade: true,
+                        message: data.Message
+                    });
+                    
+                    if (data.IsSuccessful) {
+                        $("#" + parentRow).remove();
+                    }
+                }).error(function(error) {
+                    $("#alert-messages").alertMessage({
+                        alertType: 'alert-error',
+                        autoClose: true,
+                        fade: true,
+                        message: "An unknown server error has occurred"
+                    });
+                });
+                
+
+                $("#blog-delete-modal").modal("hide");
+            });
+        });
+    </script>
+}

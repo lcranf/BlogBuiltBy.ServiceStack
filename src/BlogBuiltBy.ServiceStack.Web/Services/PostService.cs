@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using BlogBuiltBy.ServiceStack.Web.Dtos;
 using ServiceStack.Common.Web;
@@ -10,9 +9,14 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
 {
     public class PostService : Service
     {
-        public List<Post> Any(Posts posts)
+        public PostsResponse Any(Posts posts)
         {
-            return Db.Select<Post>(p => p.BlogId == posts.BlogId);
+            return new PostsResponse
+                {
+                    IsSuccessful = true,
+                    Posts = Db.Select<Post>(p => p.BlogId == posts.BlogId),
+                    Blog = Db.GetById<Blog>(posts.BlogId)
+                };
         }
 
         public object Get(Post post)

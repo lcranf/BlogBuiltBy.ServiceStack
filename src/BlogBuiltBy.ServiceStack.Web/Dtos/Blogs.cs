@@ -5,7 +5,6 @@ namespace BlogBuiltBy.ServiceStack.Web.Dtos
 {
     [Route("/blogs", "GET")]
     [Route("/blogs", "POST")]
-    [Route("/blogs", "DELETE")]
     public class Blogs : IReturn<List<Blog>> 
     {
         private long[] _ids = new long[0];
