@@ -13,6 +13,8 @@
         
         @Html.Partial("_TopMenu")
         <div class="container">
+            @ServiceStack.MiniProfiler.Profiler.RenderIncludes().AsRaw()
+
             @RenderBody()
         </div>
     

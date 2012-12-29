@@ -93,3 +93,326 @@ To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fus
 2012-12-29 12:07:29,850 [36] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
 2012-12-29 12:07:29,963 [43] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
 2012-12-29 12:07:33,441 [36] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Blog with id of '43' was deleted
+2012-12-29 12:13:14,261 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:13:14,283 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web.Dtos
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web.Dtos' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web.Dtos'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:13:14,349 [1] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting to compile 5/0 pages, In Parallel
+2012-12-29 12:13:14,349 [1] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting 4 threads..
+2012-12-29 12:13:15,238 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Blogs.cshtml in 882ms
+2012-12-29 12:13:15,307 [48] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /BlogList.cshtml in 950ms
+2012-12-29 12:13:15,346 [47] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Posts.cshtml in 950ms
+2012-12-29 12:13:15,346 [47] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 2...
+2012-12-29 12:13:15,872 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_Layout.cshtml in 633ms
+2012-12-29 12:13:15,872 [36] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:13:15,872 [36] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:13:15,921 [48] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_TopMenu.cshtml in 613ms
+2012-12-29 12:13:15,921 [48] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 0...
+2012-12-29 12:13:16,405 [48] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:13:16,571 [47] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:13:26,761 [120] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:13:26,789 [120] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web.Dtos
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web.Dtos' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web.Dtos'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:13:26,863 [120] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting to compile 5/0 pages, In Parallel
+2012-12-29 12:13:26,864 [120] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting 4 threads..
+2012-12-29 12:13:27,405 [48] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /BlogList.cshtml in 536ms
+2012-12-29 12:13:27,464 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Blogs.cshtml in 578ms
+2012-12-29 12:13:27,934 [48] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Posts.cshtml in 529ms
+2012-12-29 12:13:27,962 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_Layout.cshtml in 498ms
+2012-12-29 12:13:27,962 [36] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:13:28,382 [48] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_TopMenu.cshtml in 448ms
+2012-12-29 12:13:28,383 [48] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 0...
+2012-12-29 12:13:28,383 [48] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 0...
+2012-12-29 12:13:28,383 [48] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 0...
+2012-12-29 12:13:28,748 [36] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:13:28,913 [36] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:13:35,207 [36] DEBUG ServiceStack.WebHost.Endpoints.Metadata.IndexMetadataHandler [(null)] - 'IndexMetadataHandler' was completed in 27.0015ms
+2012-12-29 12:13:35,448 [47] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:14:01,648 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+=== Pre-bind state information ===
+LOG: User = VMCRANMAN\Lance Cranford
+LOG: DisplayName = BlogBuiltBy.ServiceStack.Web
+ (Partial)
+WRN: Partial binding information was supplied for an assembly:
+WRN: Assembly Name: BlogBuiltBy.ServiceStack.Web | Domain ID: 2
+WRN: A partial bind occurs when only part of the assembly display name is provided.
+WRN: This might result in the binder loading an incorrect assembly.
+WRN: It is recommended to provide a fully specified textual identity for the assembly,
+WRN: that consists of the simple name, version, culture, and public key token.
+WRN: See whitepaper http://go.microsoft.com/fwlink/?LinkId=109270 for more information and common solutions to this issue.
+LOG: Appbase = file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/
+LOG: Initial PrivatePath = C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\bin
+Calling assembly : ServiceStack, Version=3.9.32.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\web.config
+LOG: Using host configuration file: C:\Users\Lance Cranford\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Policy not being applied to reference at this time (private, custom, partial, or location-based assembly bind).
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.EXE.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.EXE.
+
+2012-12-29 12:14:01,728 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web.Dtos
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web.Dtos' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web.Dtos'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+=== Pre-bind state information ===
+LOG: User = VMCRANMAN\Lance Cranford
+LOG: DisplayName = BlogBuiltBy.ServiceStack.Web.Dtos
+ (Partial)
+WRN: Partial binding information was supplied for an assembly:
+WRN: Assembly Name: BlogBuiltBy.ServiceStack.Web.Dtos | Domain ID: 2
+WRN: A partial bind occurs when only part of the assembly display name is provided.
+WRN: This might result in the binder loading an incorrect assembly.
+WRN: It is recommended to provide a fully specified textual identity for the assembly,
+WRN: that consists of the simple name, version, culture, and public key token.
+WRN: See whitepaper http://go.microsoft.com/fwlink/?LinkId=109270 for more information and common solutions to this issue.
+LOG: Appbase = file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/
+LOG: Initial PrivatePath = C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\bin
+Calling assembly : ServiceStack, Version=3.9.32.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\web.config
+LOG: Using host configuration file: C:\Users\Lance Cranford\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Policy not being applied to reference at this time (private, custom, partial, or location-based assembly bind).
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+
+2012-12-29 12:14:02,418 [6] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /BlogList.cshtml in 574ms
+2012-12-29 12:14:02,418 [5] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Blogs.cshtml in 570ms
+2012-12-29 12:14:03,005 [5] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_Layout.cshtml in 586ms
+2012-12-29 12:14:03,010 [6] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Posts.cshtml in 591ms
+2012-12-29 12:14:11,665 [5] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_TopMenu.cshtml in 8659ms
+2012-12-29 12:14:18,401 [6] DEBUG ServiceStack.WebHost.Endpoints.Metadata.IndexMetadataHandler [(null)] - 'IndexMetadataHandler' was completed in 128.0073ms
+2012-12-29 12:14:18,691 [5] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:14:24,898 [5] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:16:43,325 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+=== Pre-bind state information ===
+LOG: User = VMCRANMAN\Lance Cranford
+LOG: DisplayName = BlogBuiltBy.ServiceStack.Web
+ (Partial)
+WRN: Partial binding information was supplied for an assembly:
+WRN: Assembly Name: BlogBuiltBy.ServiceStack.Web | Domain ID: 3
+WRN: A partial bind occurs when only part of the assembly display name is provided.
+WRN: This might result in the binder loading an incorrect assembly.
+WRN: It is recommended to provide a fully specified textual identity for the assembly,
+WRN: that consists of the simple name, version, culture, and public key token.
+WRN: See whitepaper http://go.microsoft.com/fwlink/?LinkId=109270 for more information and common solutions to this issue.
+LOG: Appbase = file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/
+LOG: Initial PrivatePath = C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\bin
+Calling assembly : ServiceStack, Version=3.9.32.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\web.config
+LOG: Using host configuration file: C:\Users\Lance Cranford\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Policy not being applied to reference at this time (private, custom, partial, or location-based assembly bind).
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.EXE.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web/BlogBuiltBy.ServiceStack.Web.EXE.
+
+2012-12-29 12:16:43,367 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web.Dtos
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web.Dtos' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web.Dtos'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+=== Pre-bind state information ===
+LOG: User = VMCRANMAN\Lance Cranford
+LOG: DisplayName = BlogBuiltBy.ServiceStack.Web.Dtos
+ (Partial)
+WRN: Partial binding information was supplied for an assembly:
+WRN: Assembly Name: BlogBuiltBy.ServiceStack.Web.Dtos | Domain ID: 3
+WRN: A partial bind occurs when only part of the assembly display name is provided.
+WRN: This might result in the binder loading an incorrect assembly.
+WRN: It is recommended to provide a fully specified textual identity for the assembly,
+WRN: that consists of the simple name, version, culture, and public key token.
+WRN: See whitepaper http://go.microsoft.com/fwlink/?LinkId=109270 for more information and common solutions to this issue.
+LOG: Appbase = file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/
+LOG: Initial PrivatePath = C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\bin
+Calling assembly : ServiceStack, Version=3.9.32.0, Culture=neutral, PublicKeyToken=null.
+===
+LOG: This bind starts in default load context.
+LOG: Using application configuration file: C:\Projects\BlogBuiltBy.ServiceStack\src\BlogBuiltBy.ServiceStack.Web\web.config
+LOG: Using host configuration file: C:\Users\Lance Cranford\Documents\IISExpress\config\aspnet.config
+LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config.
+LOG: Policy not being applied to reference at this time (private, custom, partial, or location-based assembly bind).
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.DLL.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+LOG: Attempting download of new URL file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/root/ec3d443f/14ec1bb0/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+LOG: Attempting download of new URL file:///C:/Projects/BlogBuiltBy.ServiceStack/src/BlogBuiltBy.ServiceStack.Web/bin/BlogBuiltBy.ServiceStack.Web.Dtos/BlogBuiltBy.ServiceStack.Web.Dtos.EXE.
+
+2012-12-29 12:16:44,065 [8] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Blogs.cshtml in 631ms
+2012-12-29 12:16:44,133 [6] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /BlogList.cshtml in 706ms
+2012-12-29 12:16:44,674 [8] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Posts.cshtml in 608ms
+2012-12-29 12:16:44,746 [6] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_Layout.cshtml in 612ms
+2012-12-29 12:16:45,233 [11] DEBUG ServiceStack.WebHost.Endpoints.Metadata.IndexMetadataHandler [(null)] - 'IndexMetadataHandler' was completed in 112.0064ms
+2012-12-29 12:16:45,455 [8] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_TopMenu.cshtml in 781ms
+2012-12-29 12:16:46,063 [12] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:16:46,218 [8] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:17:21,897 [16] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:17:21,993 [14] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:17:52,877 [16] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:21:42,791 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:21:42,820 [1] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web.Dtos
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web.Dtos' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web.Dtos'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:21:42,903 [1] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting to compile 5/0 pages, In Parallel
+2012-12-29 12:21:42,904 [1] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting 4 threads..
+2012-12-29 12:21:44,362 [15] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Posts.cshtml in 1440ms
+2012-12-29 12:21:44,382 [14] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /BlogList.cshtml in 1475ms
+2012-12-29 12:21:44,382 [14] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 3...
+2012-12-29 12:21:44,537 [16] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_Layout.cshtml in 1602ms
+2012-12-29 12:21:44,537 [16] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 2...
+2012-12-29 12:21:44,573 [17] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Blogs.cshtml in 1665ms
+2012-12-29 12:21:44,573 [17] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:21:45,013 [15] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_TopMenu.cshtml in 650ms
+2012-12-29 12:21:45,016 [15] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 0...
+2012-12-29 12:21:45,714 [16] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:21:45,721 [14] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:21:53,518 [14] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:21:53,717 [17] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:22:10,604 [18] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:22:44,028 [16] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Creating blog with name 'Cool Beans'
+2012-12-29 12:22:44,147 [16] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Created a new blog with a id of '44'
+2012-12-29 12:23:00,165 [15] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:23:00,397 [20] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico

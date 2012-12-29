@@ -5,6 +5,8 @@ using Funq;
 using ServiceStack.Logging;
 using ServiceStack.Logging.Log4Net;
 using ServiceStack.Logging.Support.Logging;
+using ServiceStack.MiniProfiler;
+using ServiceStack.MiniProfiler.Data;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
 using ServiceStack.WebHost.Endpoints;
@@ -18,13 +20,17 @@ namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
 
         public override void Configure(Container container)
         {
-            //TODO: configure logging
-            LogManager.LogFactory = new Log4NetFactory(true);
-            InstallPlugins(container);
+            SetupLoggingAndProfiling(container);
+            SetupPlugins(container);
             SetupDatabase(container);
         }
 
-        private void InstallPlugins(Container container)
+        private void SetupLoggingAndProfiling(Container container)
+        {
+            LogManager.LogFactory = new Log4NetFactory(true);
+        }
+
+        private void SetupPlugins(Container container)
         {
             Plugins.Add(new RazorFormat());
         }
@@ -32,7 +38,11 @@ namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
         private void SetupDatabase(Container container)
         {
             var dbFactory = new OrmLiteConnectionFactory(
-                HttpContext.Current.Server.MapPath("~/App_Data/blogdb.sqlite"), SqliteDialect.Provider);
+                HttpContext.Current.Server.MapPath("~/App_Data/blogdb.sqlite"), SqliteDialect.Provider)
+                {
+                    ConnectionFilter = con => new ProfiledDbConnection(con, Profiler.Current)
+                };
+
             CreateDatabase(dbFactory);
 
             container.Register<IDbConnectionFactory>(dbFactory);
