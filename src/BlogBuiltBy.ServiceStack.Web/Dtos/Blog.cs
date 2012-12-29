@@ -4,7 +4,7 @@ using ServiceStack.ServiceHost;
 namespace BlogBuiltBy.ServiceStack.Web.Dtos
 {
     [Route("/blog/{Id}", "GET")]
-    [Route("/blog", "POST")]
+    [Route("/blog", "POST")] 
     [Route("/blog", "PUT")]
     public class Blog
     {

@@ -48,6 +48,7 @@ namespace BlogBuiltBy.ServiceStack.Web.Services
 
             return new DeleteBlogResponse
                 {
+                    Id = blog.Id,
                     IsSuccessful = true,
                     RowsAffected = 1,
                     Message = string.Format("Blog with id of '{0}' was successfully deleted", blog.Id)

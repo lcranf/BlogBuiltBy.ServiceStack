@@ -14,11 +14,6 @@
 
 <div id="alert-messages"></div>
 
-<div class="alert alert-block alert-error hide fade in">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <p>This is a error message from the server</p>
-</div>
-
 <table id="blogs-table" class="table table-hover table-bordered table-striped">
     <thead>
         <tr>
@@ -30,7 +25,7 @@
     <tbody>
         @if (!Model.Any())
         {
-            <tr><td colspan="3">No Blogs Available</td></tr>
+            <tr id="no-blogs"><td colspan="3">No Blogs Available</td></tr>
         }
         @foreach (var blog in Model)
         {
@@ -44,7 +39,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+                            <li><a class="edit-confirmation" href="#"><i class="icon-pencil"></i> Edit</a></li>
                             <li><a class="delete-confirmation" data-toggle="modal" data-delete-url="/blog/delete/@blog.Id" data-parent-row="blog-row-@blog.Id"><i class="icon-trash"></i>  Delete</a></li>
                             <li><a href="@Url.Content(string.Format("/posts/{0}", blog.Id))"><i class="icon-eye-open"></i> View Posts</a></li>
                         </ul>
@@ -69,6 +64,21 @@
     </div>
 </div>
 
+<div id="blog-modify-modal" class="modal hide fade" tabindex="-1" role="dialog">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3>Modify Blog?</h3>
+    </div>
+    <div class="modal-body">
+        <p><input type="text" id="blogname"/></p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary modify-confirmed">Save</button>
+    </div>
+</div>
+
+
 @section JavaScript {
     
     <script src="@Url.Content("~/Assets/Scripts/jquery.alert.js")"></script>
@@ -92,6 +102,12 @@
                       .modal("show");
             });
 
+            $("#blogs-table").on("click", "a.edit-confirmation", function(e) {
+                e.preventDefault();
+
+                $("#blog-modify-modal").modal("show");
+                
+            });
             $("#blog-delete-modal").on("click", "button.delete-confirmed", function(e) {
                 var deleteUrl = $("#blog-delete-modal").data("delete-url");
                 var parentRow = $("#blog-delete-modal").data("parent-row");

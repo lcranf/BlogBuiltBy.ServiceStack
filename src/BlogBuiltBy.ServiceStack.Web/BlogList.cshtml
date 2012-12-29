@@ -1,0 +1,173 @@
+﻿@inherits ViewPage
+
+@{
+    ViewBag.Title = "Blogs";
+}              
+
+
+<p>
+    <a class="btn btn-inverse blog-action" data-edit-action="Create">Create New Blog</a>    
+</p>
+
+<div id="alert-messages"></div>
+
+<div id="blog-action-modal" class="modal hide fade" tabindex="-1" role="dialog" data-bind="with: blogAction">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 data-bind="text: action() + ' Blog'"></h3>
+    </div>
+    <div class="modal-body">
+        <p data-bind="visible: action() == 'Delete', text: 'Are you sure you want to delete ' + name() + '?'"></p>
+        <p><input data-bind="visible: action() != 'Delete', value: name" type="text" /></p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Close</button>
+        <button class="btn blog-action-button" data-bind="text: action, css: { 'btn-danger': action() == 'Delete', 'btn-success': action() == 'Create', 'btn-primary': action() == 'Edit' }"></button>
+    </div>
+</div>
+
+<table id="blogs-table" class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: blogs">
+        <tr>
+            <td data-bind="text: id"></td>
+            <td data-bind="text: name"></td>
+            <td>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        Action
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="blog-action" data-edit-action="Edit" href="#"><i class="icon-pencil"></i> Edit</a></li>
+                        <li><a class="blog-action" data-edit-action="Delete" data-toggle="modal"><i class="icon-trash"></i>  Delete</a></li>
+                        <li><a data-bind="attr: { href: viewPostsUrl }"><i class="icon-eye-open"></i> View Posts</a></li>
+                    </ul>
+                </div>
+
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+@section JavaScript {
+    <script type="text/javascript" src="@Url.Content("~/Assets/Scripts/knockout-2.2.0.js")"></script>
+    <script src="@Url.Content("~/Assets/Scripts/jquery.alert.js")"></script>
+
+    <script type="text/javascript">
+        
+        function Blog(id, name) {
+            var self = this;
+
+            self.id = ko.observable(id);
+            self.name = ko.observable(name);
+
+            self.viewPostsUrl = ko.computed(function() {
+                return "/posts/" + self.id();
+            });
+        }
+        
+        function BlogAction(id, name, action) {
+            var self = this;
+
+            self.id = ko.observable(id);
+            self.name = ko.observable(name);
+            self.action = ko.observable(action);
+
+            self.actionUrl = ko.computed(function() {
+                var deleteUrl = "/blog/delete/" + self.id();
+
+                return self.action() == "Delete" ? deleteUrl : "/blog";
+            });
+
+            self.successMessage = function(response) {
+                if (self.action() == 'Delete') {
+                    return response.Message;
+                }
+
+                return "'" + response.Name + "' was successfully " + (self.action() == 'Create' ? "Created" : "Saved") + ".";
+            };
+
+            self.actionType = ko.computed(function() {
+                return self.action() == "Edit" ? "Put" : "Post";
+            });
+        }
+        
+        function BlogViewModel() {
+            var self = this;
+
+            self.blogAction = ko.observable(new BlogAction(-1, "", ""));
+            self.blogs = ko.observableArray([]);
+
+            self.performAction = function(action, blog) {
+
+                if (action.action() == 'Create') {
+                    self.blogs.push(new Blog(blog.Id, blog.Name));
+                } else if (action.action() == 'Delete') {
+                    self.blogs.remove(function(i) { return i.id() == blog.Id; });
+                } else {
+                    var item = ko.utils.arrayFirst(self.blogs(), function(it) {
+                        return it.id() == blog.Id;
+                    });
+                    item.name(blog.Name);
+                }
+            };
+        }
+
+        var viewModel = new BlogViewModel();
+
+        $(function () {
+            $.ajaxSetup({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
+            });
+
+            $.ajax("/blogs", { type: "GET" }).success(function (data) {
+                
+                var blogs = $.map(data, function(blog) {
+                    return new Blog(blog.Id, blog.Name);
+                });
+
+                viewModel.blogs(blogs);
+
+            });
+
+            $(document).on("click", "a.blog-action", function(e) {
+
+                e.preventDefault();
+
+                var action = $(this).data("edit-action");
+                var data = (action == 'Create') ? new Blog(-1, "") : ko.dataFor(this);
+                
+                viewModel.blogAction(new BlogAction(data.id(), data.name(), action));
+
+                $("#blog-action-modal").modal("show");
+            });
+
+            $("#blog-action-modal").on("click", "button.blog-action-button", function(e) {
+
+                e.preventDefault();
+
+                var action = ko.dataFor(this);
+
+                $.ajax(action.actionUrl(), { type: action.actionType(), data: ko.toJSON(action) }).success(function (data) {
+                    viewModel.performAction(action, data);
+                    $("#alert-messages").alertMessage({ fade: true, autoClose: true, alertType: 'alert-success', message: action.successMessage(data) });
+                });
+                
+                $("#blog-action-modal").modal("hide");
+            });
+        });
+
+        ko.applyBindings(viewModel);
+    </script>
+
+}

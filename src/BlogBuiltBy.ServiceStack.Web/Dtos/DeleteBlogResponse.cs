@@ -2,5 +2,6 @@
 {
     public class DeleteBlogResponse : ResponseBase
     {
+        public int Id { get; set; }
     }
 }

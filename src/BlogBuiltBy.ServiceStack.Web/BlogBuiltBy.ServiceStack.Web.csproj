@@ -130,6 +130,8 @@
     <Content Include="Assets\Scripts\bootstrap.min.js" />
     <Content Include="Global.asax" />
     <Content Include="README.txt" />
+    <Content Include="Assets\Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Assets\Scripts\knockout-2.2.0.js" />
     <Content Include="Web.config" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -167,6 +169,7 @@
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Posts.cshtml" />
     <Content Include="Assets\Scripts\jquery.alert.js" />
+    <Content Include="BlogList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
