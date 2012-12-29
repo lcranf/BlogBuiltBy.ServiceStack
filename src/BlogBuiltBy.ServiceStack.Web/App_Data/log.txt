@@ -1,0 +1,95 @@
+2012-12-29 12:03:14,281 [37] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:03:14,365 [37] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web.Dtos
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web.Dtos' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web.Dtos'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:03:14,434 [37] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting to compile 5/0 pages, In Parallel
+2012-12-29 12:03:14,435 [37] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting 4 threads..
+2012-12-29 12:03:15,182 [42] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Posts.cshtml in 722ms
+2012-12-29 12:03:15,433 [34] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Blogs.cshtml in 976ms
+2012-12-29 12:03:15,643 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /BlogList.cshtml in 1204ms
+2012-12-29 12:03:15,643 [36] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 2...
+2012-12-29 12:03:15,718 [36] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 2...
+2012-12-29 12:03:16,058 [42] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_Layout.cshtml in 876ms
+2012-12-29 12:03:16,058 [42] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:03:16,093 [34] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_TopMenu.cshtml in 660ms
+2012-12-29 12:03:16,093 [34] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 0...
+2012-12-29 12:03:16,383 [36] DEBUG ServiceStack.WebHost.Endpoints.Metadata.IndexMetadataHandler [(null)] - 'IndexMetadataHandler' was completed in 237.0136ms
+2012-12-29 12:03:16,823 [34] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:03:22,971 [42] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:03:23,050 [36] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:04:18,084 [41] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Creating blog with name 'Another Blog'
+2012-12-29 12:04:18,150 [41] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Created a new blog with a id of '43'
+2012-12-29 12:07:27,439 [120] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:07:27,463 [120] ERROR ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator [(null)] - Can't load assembly: BlogBuiltBy.ServiceStack.Web.Dtos
+System.IO.FileNotFoundException: Could not load file or assembly 'BlogBuiltBy.ServiceStack.Web.Dtos' or one of its dependencies. The system cannot find the file specified.
+File name: 'BlogBuiltBy.ServiceStack.Web.Dtos'
+   at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at ServiceStack.WebHost.Endpoints.Support.Markdown.Evaluator.AddAssembly(String assemblyName)
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+2012-12-29 12:07:27,533 [120] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting to compile 5/0 pages, In Parallel
+2012-12-29 12:07:27,533 [120] INFO  ServiceStack.Html.TemplateProvider [(null)] - Starting 4 threads..
+2012-12-29 12:07:28,328 [40] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Blogs.cshtml in 769ms
+2012-12-29 12:07:28,353 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /BlogList.cshtml in 816ms
+2012-12-29 12:07:28,948 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_Layout.cshtml in 594ms
+2012-12-29 12:07:29,019 [40] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Posts.cshtml in 691ms
+2012-12-29 12:07:29,019 [40] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:07:29,019 [40] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:07:29,019 [40] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 1...
+2012-12-29 12:07:29,462 [36] INFO  ServiceStack.Razor.ViewPageRef [(null)] - Compiled /Views/Shared/_TopMenu.cshtml in 514ms
+2012-12-29 12:07:29,462 [36] INFO  ServiceStack.Html.TemplateProvider [(null)] - Compilation threads remaining 0...
+2012-12-29 12:07:29,850 [36] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
+2012-12-29 12:07:29,963 [43] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 12:07:33,441 [36] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Blog with id of '43' was deleted

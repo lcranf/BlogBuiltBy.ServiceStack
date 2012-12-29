@@ -3,6 +3,7 @@ using BlogBuiltBy.ServiceStack.Web.Dtos;
 using BlogBuiltBy.ServiceStack.Web.Services;
 using Funq;
 using ServiceStack.Logging;
+using ServiceStack.Logging.Log4Net;
 using ServiceStack.Logging.Support.Logging;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
@@ -18,7 +19,7 @@ namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
         public override void Configure(Container container)
         {
             //TODO: configure logging
-            //LogManager.LogFactory = new DebugLogFactory();
+            LogManager.LogFactory = new Log4NetFactory(true);
             InstallPlugins(container);
             SetupDatabase(container);
         }
