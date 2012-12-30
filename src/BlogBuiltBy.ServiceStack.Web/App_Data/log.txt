@@ -698,3 +698,6 @@ To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fus
 2012-12-29 19:42:02,361 [27] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
 2012-12-29 19:42:03,454 [27] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Getting blogs
 2012-12-29 19:42:03,548 [9] ERROR ServiceStack.WebHost.Endpoints.Support.NotFoundHttpHandler [(null)] - ::1 Request not found: /favicon.ico
+2012-12-29 19:47:39,265 [32] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Blog with id of '44' was deleted
+2012-12-29 19:47:43,228 [31] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Updating blog with a id of '40'
+2012-12-29 19:47:43,292 [31] DEBUG BlogBuiltBy.ServiceStack.Web.Services.BlogService [(null)] - Blog with Id '40' successfully updated
