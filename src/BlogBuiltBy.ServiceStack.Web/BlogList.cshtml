@@ -9,6 +9,21 @@
     <a class="btn btn-inverse blog-action" data-edit-action="Create">Create New Blog</a>    
 </p>
 
+<p>
+     <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        View As
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/blogs?format=json">Json</a></li>
+                        <li><a href="/blogs?format=csv">Csv</a></li>
+                        <li><a href="/blogs?format=xml">Xml</a></li>
+                        <li><a href="/blogs?format=jsv">Jsv</a></li>
+                    </ul>
+                </div>
+</p>
+
 <div id="alert-messages"></div>
 
 <div id="blog-action-modal" class="modal hide fade" tabindex="-1" role="dialog" data-bind="with: blogAction">

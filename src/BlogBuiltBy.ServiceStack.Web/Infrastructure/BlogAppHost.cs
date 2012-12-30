@@ -9,6 +9,7 @@ using ServiceStack.MiniProfiler;
 using ServiceStack.MiniProfiler.Data;
 using ServiceStack.OrmLite;
 using ServiceStack.Razor;
+using ServiceStack.ServiceInterface.Admin;
 using ServiceStack.WebHost.Endpoints;
 
 namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
@@ -32,6 +33,7 @@ namespace BlogBuiltBy.ServiceStack.Web.Infrastructure
 
         private void SetupPlugins(Container container)
         {
+            Plugins.Add(new RequestLogsFeature());
             Plugins.Add(new RazorFormat());
         }
 
