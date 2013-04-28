@@ -4,7 +4,6 @@ using BlogBuiltBy.ServiceStack.Web.Services;
 using Funq;
 using ServiceStack.Logging;
 using ServiceStack.Logging.Log4Net;
-using ServiceStack.Logging.Support.Logging;
 using ServiceStack.MiniProfiler;
 using ServiceStack.MiniProfiler.Data;
 using ServiceStack.OrmLite;

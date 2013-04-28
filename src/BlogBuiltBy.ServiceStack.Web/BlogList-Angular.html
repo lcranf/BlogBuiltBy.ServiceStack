@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Angular Blog List</title>
+        <script src="Scripts/controllers/blog.js"></script>
+
+    </head>
+    <body ng-app>
+        <div ng-controller="BlogCtrl">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="blog in blogs">
+                        <td>{{blog.Id}}</td>
+                        <td>{{blog.Name}}</td>
+                        <td><a href="#" ng-click="deleteBlog($index)">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="Scripts/underscore.js"></script>
+        <script src="Scripts/angular.js"></script>
+    </body>
+</html>
+
